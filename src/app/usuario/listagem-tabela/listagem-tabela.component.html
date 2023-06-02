@@ -1,0 +1,38 @@
+<mat-table [dataSource]="usuarios">
+    <!--- ID Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+      <mat-cell *matCellDef="let usuario"> {{usuario.id}} </mat-cell>
+    </ng-container>
+  
+    <!--- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let usuario"> {{usuario.nome}} </mat-cell>
+    </ng-container>
+  
+    <!--- CPF Column -->
+    <ng-container matColumnDef="cpf">
+      <mat-header-cell *matHeaderCellDef> CPF </mat-header-cell>
+      <mat-cell *matCellDef="let usuario"> {{usuario.cpf}} </mat-cell>
+    </ng-container>
+  
+    <!--- Actions Column -->
+    <ng-container matColumnDef="ações">
+      <mat-header-cell *matHeaderCellDef> Ações </mat-header-cell>
+      <mat-cell *matCellDef="let usuario" class="action-cell">
+        <div fxLayout="row" fxLayoutAlign="center">
+          <button mat-icon-button [routerLink]="['/editausuario', usuario.id]">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="apagar(usuario.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  

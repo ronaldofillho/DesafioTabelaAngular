@@ -1,0 +1,32 @@
+.action-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .action-cell button {
+    margin: 0 4px;
+  }
+  
+  .action-cell button mat-icon {
+    font-size: 18px;
+  }
+  
+  .action-cell button.edit-button {
+    background-color: #2196f3;
+    color: #fff;
+  }
+  
+  .action-cell button.delete-button {
+    background-color: #f44336;
+    color: #fff;
+  }
+  
+  .action-cell button:hover {
+    opacity: 0.8;
+  }
+  
+  .action-cell button:focus {
+    outline: none;
+  }
+  
